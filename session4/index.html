@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>homeWorl</title>
+    </head>
+    <body>
+        <button id="btn1">click me</button>
+        <p id="name">my name is elahe</p>
+        <p id="text">my name is elahe</p>
+        <div id="mainDivConversation"></div>
+        <script>
+            var car = ["bmw","volvo", "benz"];
+            document.getElementById("name").innerHTML  = car[0];
+            //console.log(car);
+
+            document.getElementById("btn1").onclick = loop;
+                           
+            function getLength(){
+                document.getElementById("name").innerHTML=car.length;
+            }
+
+            function addItemEndArray(){
+                car.push("pride");
+                console.log(car);
+                document.getElementById("name").innerHTML=car;
+            }
+            function deleteItemEndArray(){
+                car.pop();
+                console.log(car);
+                document.getElementById("name").innerHTML=car;
+            }
+            function shiftItem(){
+                car.shift();
+                console.log(car);
+                document.getElementById("name").innerHTML=car;
+            }
+            function addItemFirsArr(){
+                car.unshift("pride");
+                console.log(car);
+                document.getElementById("name").innerHTML=car;
+            }
+            function deleteEchIndex(){//maybe make bug
+                //delete.car[0];
+                console.log(car);
+                document.getElementById("name").innerHTML=car;
+            }
+            function deleteEchIndex(){
+                car.splice(1,2,"eli","pic");
+                console.log(car);
+                document.getElementById("name").innerHTML=car;
+            }
+
+            function combineInfo(){
+                console.log(conversationList[0].allInfo());
+            }
+
+            var conversationList = [
+                    /*{name:"peson1",date:"98-1-4", allInfo: function(){
+                            //console.log( this.name , this.date);
+                            return this.name + " " + this.date;
+                        }
+                    },*/
+                    {name:"peson1",date:"98-1-4"},
+                    {name:"peson2",date:"98-2-3"},
+                    {name:"peson3",date:"98-3-5"},
+                    {name:"peson4",date:"98-4-1"}
+            ]
+
+            /*var conversationList = [
+                {name:"peson1",date:"98-1-4", allInfo: function(){
+                    console.log( this.name , this.date);
+                    return this.name + " " + this.date;
+                    }
+                },
+                {name:"peson2",date:"98-2-3"},
+                {name:"peson3",date:"98-3-5"},
+                {name:"peson4",date:"98-4-1"}
+            ];
+            */
+            //console.log(conversationList);
+            function delSecondCOnverssation(){
+                conversationList.splice(1,1);2
+                console.log(conversationList);
+                document.getElementById("name").innerHTML=conversationList;
+            }
+            function concatArr(){
+                var newPerson = {name:"mina", date:"23-323-3"};
+                console.log([newPerson]);
+                console.log(conversationList);
+                var eli = [newPerson].concat(conversationList); 
+                console.log(eli);
+            }
+            var date = new Date();
+            document.getElementById("text").innerHTML  = date.getTime();
+
+
+            function loop(){
+                var contact ="";
+                for(var i=0; i<conversationList.length; i++){
+                    contact += "<div> <p>" + conversationList[i].name + "</p></div>";
+                    document.getElementById("mainDivConversation").innerHTML  = contact;
+                }
+
+            }
+
+        </script>
+
+    </body>
+</html>
