@@ -1,0 +1,30 @@
+.App {
+  background: #fff;
+}
+
+.container{
+  background: #f2f2f2;
+  width: 40%;
+  margin: 0 auto;
+  border: 1px solid gray;
+  margin-top: 100px;
+
+
+}
+.inputClass{
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+#submit {
+  background: #00ffa3;
+
+}
+#logoId{
+  width: 100px;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
